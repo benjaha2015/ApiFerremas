@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "f399ce74-5d22-4dc8-9334-6ae27de250de",
+		"name": "servicio con seguridad",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44731212",
+		"_collection_link": "https://benjamin-7171385.postman.co/workspace/benjamin's-Workspace~7b4c11a9-aa37-440a-86a7-65bccfbace29/collection/44731212-f399ce74-5d22-4dc8-9334-6ae27de250de?action=share&source=collection_link&creator=44731212"
+	},
+	"item": [
+		{
+			"name": "auth login",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "escritor123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "escritor",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"escritor\", \"password\": \"escritor123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener productos JWT",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlc2NyaXRvciIsImlhdCI6MTc0ODQ5Mzc1MywiZXhwIjoxNzQ4NDk3MzUzfQ.p_a642-AzMhkRWQokjmQLAR3KdPpRFX7XK2ZkzA1Y0w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener productos",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "lector",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "lector123",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear producto",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "escritor123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "escritor",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Martillo carpintero\",\r\n    \"precio\": 19.99,\r\n    \"marca\": \"PernosKIM\",\r\n    \"codigo\": \"COD-67890\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear producto jwt",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlc2NyaXRvciIsImlhdCI6MTc0Nzg4NzUwOSwiZXhwIjoxNzQ3ODkxMTA5fQ.ucVutUIy6GQxBPbr_a-ksRxkkcDay-fYWXYGTQ4wJWA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Producto de prueba\",\r\n    \"precio\": 19.99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "2ea355f2-231c-4d16-ba69-e73b4baaf844",
+		"name": "WebPay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44731212",
+		"_collection_link": "https://benjamin-7171385.postman.co/workspace/benjamin's-Workspace~7b4c11a9-aa37-440a-86a7-65bccfbace29/collection/44731212-2ea355f2-231c-4d16-ba69-e73b4baaf844?action=share&source=collection_link&creator=44731212"
+	},
+	"item": [
+		{
+			"name": "Crear Transaccion",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "escritor123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "escritor",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"buyOrder\": \"1234\",\r\n    \"sessionId\": \"sesion1234564\",\r\n    \"returnUrl\": \"http://www.localhost:8080/return\",\r\n    \"amount\": 10000\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/webpay",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"webpay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Transaccion}",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "lector123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "lector",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/webpay/search?token_ws=01ab5f783f70099da54797e08bc1a3099465d14406279b5a8ab12b766f327241",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"webpay",
+						"search"
+					],
+					"query": [
+						{
+							"key": "token_ws",
+							"value": "01ab5f783f70099da54797e08bc1a3099465d14406279b5a8ab12b766f327241"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "commit compra",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "lector123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "lector",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/webpay/commit?token_ws=01ab5f783f70099da54797e08bc1a3099465d14406279b5a8ab12b766f327241",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"webpay",
+						"commit"
+					],
+					"query": [
+						{
+							"key": "token_ws",
+							"value": "01ab5f783f70099da54797e08bc1a3099465d14406279b5a8ab12b766f327241"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

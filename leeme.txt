@@ -1,0 +1,12 @@
+1)activar el xampp
+2)activar apache, mysql
+3)revisar puerto que tiene mysql
+4) presionar admin de mysql
+5)copiar lo que tiene el archivo basededatosferremas y pegar en la parte que dice sql
+6)abrir la carpeta servicioseguro con visual
+7)revisar aplication.properties si spring.datasource.url coincida con su puerto del mysql en xampp
+8)si no es lo mismo, cambiar el numero 3306 por el puerto correspondiente
+9)descargar las extensiones de spring boot y java
+10)activar el spring boot
+11)abrir postman y importar los archivos que contengan "postman"
+12) probar los sistemas
