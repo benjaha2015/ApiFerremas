@@ -1,0 +1,6 @@
+credito: VISA	4051 8856 0044 6623
+CVV 123
+cualquier fecha de expiración
+
+
+debito :4051 8842 3993 7763
